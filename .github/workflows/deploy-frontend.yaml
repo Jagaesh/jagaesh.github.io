@@ -1,0 +1,57 @@
+name: Test Frontend and Deploy to S3 Bucket
+
+# Define trigger
+on:
+  push:
+    branches:
+      - master
+      - features
+  
+# Define variables
+env:
+  AWS_REGION: ap-northeast-2  # Replace with your desired AWS region
+  IAM_ROLE_ARN: ${{ secrets.IAM_ROLE_ARN }}  # Replace with the IAM role ARN
+  S3_BUCKET_NAME: mrbrown-my-portfolio  # Replace with your S3 bucket name
+
+# Define permissions
+permissions:
+  id-token: write
+  contents: read
+
+# Define actions
+jobs:
+  test_website:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Do nothing placeholder action
+        run: echo "This is a placeholder action that does nothing"
+    
+    # - name: Install Node.js and npm
+    #   uses: actions/setup-node@v2
+    #   with:
+    #     node-version: '20'
+
+    # - name: Install dependencies and run Cypress test
+    #   run: |
+    #     npm install
+    #     npm run cypress:test
+
+  sync_bucket:
+    needs: test_website
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        role-to-assume: ${{ env.IAM_ROLE_ARN }}
+        # role-duration-seconds: 900  # Adjust as per your requirements
+        aws-region: ${{ env.AWS_REGION }}
+
+    - name: Deploy Frontend to S3 Bucket
+      run: |
+        echo "Current directory: $(pwd)"
+        ls
+        aws s3 sync ./frontend s3://${{ env.S3_BUCKET_NAME }} --delete --region ${{ env.AWS_REGION }}
