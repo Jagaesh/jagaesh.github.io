@@ -10,7 +10,7 @@ on:
 # Define variables
 env:
   AWS_REGION: ap-northeast-2  # Replace with your desired AWS region
-  IAM_ROLE_ARN: ${{ secrets.IAM_ROLE_ARN }}  # Replace with the IAM role ARN
+  IAM_ROLE_ARN: ${{ secrets.GH_ACTIONS_ROLE_ARN }}  # Replace with the IAM role ARN
   S3_BUCKET_NAME: mrbrown-my-portfolio  # Replace with your S3 bucket name
 
 # Define permissions
