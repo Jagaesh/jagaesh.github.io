@@ -5169,13 +5169,11 @@ section {
       padding-bottom: 3.75rem; } }
 
 .about p {
+  text-align: justify;
   font-size: 1.125rem; }
   @media (min-width: 576px) {
     .about p {
       font-size: 1.25rem; } }
-
-.about__content {
-  text-align: justify; }
 
 .about__cta-box {
   margin: 1.5625rem 0 0.625rem 0; }
