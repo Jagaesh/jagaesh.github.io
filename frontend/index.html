@@ -162,13 +162,13 @@
                                 <svg class="icon about__skills-icon">
                                     <use xlink:href="./img/SVG/symbol-defs.svg#icon-github-actions"></use>
                                 </svg>
+
                                 <svg class="icon about__skills-icon">
                                     <use xlink:href="./img/SVG/symbol-defs.svg#icon-linux"></use>
                                 </svg>
                                 <svg class="icon about__skills-icon">
                                     <use xlink:href="./img/SVG/symbol-defs.svg#icon-chatgpt"></use>
                                 </svg>
-
                                 <svg class="icon about__skills-icon">
                                     <use xlink:href="./img/SVG/symbol-defs.svg#icon-python"></use>
                                 </svg>
@@ -607,25 +607,27 @@
 
                             <!-- Replace with your Access Key -->
                             <input type="hidden" name="access_key" value="13b1f551-f741-454a-b7a4-b389bb0044a5">
-
+                            
                             <div class="form-group">
                                 <label for="Username">Username</label>
-                                <input required type="text" class="form-control" id="Username">
+                                <input required type="text" class="form-control" id="Username" name="name">
                             </div>
                             <div class="form-group">
                                 <label for="Email">Email</label>
-                                <input required type="email" class="form-control" id="Email">
+                                <input required type="email" class="form-control" id="Email" name="email">
                             </div>
                             <div class="form-group">
                                 <label for="subject">Subject</label>
-                                <input required type="text" class="form-control" id="subject">
+                                <input required type="text" class="form-control" id="subject" name="object">
                             </div>
-
+                            
                             <div class="form-group">
                                 <label for="message">Your message</label>
-                                <textarea required type="text" class="form-control" id="message" rows="4"></textarea>
+                                <textarea required type="text" class="form-control" id="message" name="message" rows="4"></textarea>
                             </div>
-
+                            
+                            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                            <div class="h-captcha" data-captcha="true"></div>
 
                             <button type="submit" class="mt-2 btn btn--full float-right">Send <svg
                                     class="icon btn__icon-right">
