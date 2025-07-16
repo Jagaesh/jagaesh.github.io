@@ -1,6 +1,6 @@
 # 0xFolio
 
-0xFolio is a free-to-use portfolio HTML template for developers. It contains very simple, responsive and optmized code. Code is sum of several components which can be reused in any project very easily.
+0xFolio is a free-to-use portfolio HTML template for developers. It contains very simple, responsive and optimized code. Code is sum of several components which can be reused in any project very easily.
 
 **Live preview:** https://0xali.com/0xfolio
 
