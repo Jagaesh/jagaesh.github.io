@@ -1,3 +1,5 @@
+Template provided by 0xAliRaza. You can check his work here: https://github.com/0xAliRaza/0xfolio
+
 # 0xFolio
 
 0xFolio is a free-to-use portfolio HTML template for developers. It contains very simple, responsive and optimized code. Code is sum of several components which can be reused in any project very easily.
